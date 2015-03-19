@@ -1,0 +1,31 @@
+﻿@model ModelStateDemo.ViewModels.Home.AddUserVM
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add</h2>
+
+@using(Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <div>
+        <div>
+            @Html.LabelFor(x => x.FirstName)
+            @Html.TextBoxFor(x => x.FirstName)
+            @Html.ValidationMessageFor(x => x.FirstName)
+        </div>
+        <div>
+            @Html.LabelFor(x => x.LastName)
+            @Html.TextBoxFor(x => x.LastName)
+            @Html.ValidationMessageFor(x => x.LastName)
+        </div>
+        <div>
+            @Html.LabelFor(x => x.EmailAddress)
+            @Html.TextBoxFor(x => x.EmailAddress)
+            @Html.ValidationMessageFor(x => x.EmailAddress)
+        </div>
+        <div>
+            <input type="submit" value="Save" />
+        </div>
+    </div>
+}
